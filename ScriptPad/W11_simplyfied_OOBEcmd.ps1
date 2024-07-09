@@ -128,7 +128,6 @@ Invoke-RestMethod https://raw.githubusercontent.com/AkosBakos/OSDCloud/main/Inst
 Invoke-RestMethod https://check-autopilotprereq.osdcloud.ch | Out-File -FilePath 'C:\Windows\Setup\scripts\autopilotprereq.ps1' -Encoding ascii -Force
 Invoke-RestMethod https://start-autopilotoobe.osdcloud.ch | Out-File -FilePath 'C:\Windows\Setup\scripts\autopilotoobe.ps1' -Encoding ascii -Force
 
-
 $OOBECMD = @'
 @echo off
 # Execute OOBE Tasks
@@ -142,8 +141,7 @@ start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\Setup\Scri
 
 exit 
 '@
-$OOBECMD | Out-File -FilePath 'C:\Windows\System32\OOBE.cmd' -Encoding ascii -Force
-
+$OOBECMD | Out-File -FilePath 'C:\Windows\Setup\scripts\oobe.cmd' -Encoding ascii -Force
 #================================================
 #  [PostOS] SetupComplete CMD Command Line
 #================================================
