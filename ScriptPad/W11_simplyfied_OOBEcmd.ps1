@@ -132,7 +132,7 @@ $OOBECMD = @'
 @echo off
 # Execute OOBE Tasks
 start /Wait PowerShell -NoL -C Install-Module AutopilotOOBE -Force -Verbose
-start /Wait PowerShell -NoL -C Install-Module OSD -Force -Verbose
+# start /Wait PowerShell -NoL -C Install-Module OSD -Force -Verbose
 start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\Setup\Scripts\keyboard.ps1
 start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\Setup\Scripts\productkey.ps1
 start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\Setup\Scripts\autopilotprereq.ps1
