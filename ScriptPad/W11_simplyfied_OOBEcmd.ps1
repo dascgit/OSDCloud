@@ -131,11 +131,13 @@ Invoke-RestMethod https://start-autopilotoobe.osdcloud.ch | Out-File -FilePath '
 $OOBECMD = @'
 @echo off
 # Execute OOBE Tasks
+start /Wait PowerShell -NoL -C Install-Module AutopilotOOBE -Force -Verbose
+start /Wait PowerShell -NoL -C Install-Module OSD -Force -Verbose
 start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\Setup\Scripts\keyboard.ps1
 start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\Setup\Scripts\productkey.ps1
 start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\Setup\Scripts\autopilotprereq.ps1
 start /wait powershell.exe -NoL -ExecutionPolicy Bypass -F C:\Windows\Setup\Scripts\autopilotoobe.ps1
-
+start /Wait PowerShell -NoL -C Restart-Computer -Force
 # Below a PS session for debug and testing in system context, # when not needed 
 # start /wait powershell.exe -NoL -ExecutionPolicy Bypass
 
